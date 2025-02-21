@@ -33,9 +33,12 @@
  * For instance, you can do `4_mtr = 50` to set motor 4's target velocity to 50
  */
 #define PROS_USE_LITERALS
-
+#include "pros/apix.h"
 #include "api.h"
 #include "funcs.hpp"
+#include "configstuff.hpp"
+#include "autons.hpp"
+#include "graphics_renderer.hpp"
 /**
  * You should add more #includes here
  */
@@ -64,17 +67,9 @@ extern "C" {
 void autonomous(void);
 void initialize(void);
 
-void updateselectedauton();
-int getselectedauton();
-void runselectedauton();
-void testauton();
-void redneg();
-void blueneg();
-void redpos();
-void bluepos();
+
 
 void disabled(void);
-void arm_task();
 void competition_initialize(void);
 void opcontrol(void);
 #ifdef __cplusplus

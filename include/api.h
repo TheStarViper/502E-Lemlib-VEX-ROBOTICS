@@ -28,6 +28,9 @@
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
 #else /* (not) __cplusplus */
 #include <errno.h>
 #include <math.h>
