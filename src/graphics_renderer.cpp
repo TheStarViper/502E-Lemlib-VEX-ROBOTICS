@@ -162,13 +162,13 @@ void drawRotatedText(int x, int y, std::string text, const std::string& hexColor
     // Rotation logic for text could go here, but PROS doesn't support rotation of text by default
     pros::screen::print(pros::E_TEXT_MEDIUM, textY, textX,text.c_str());
 }
-
+/*
 void renderLoop() {
     // Example of usage of some drawing functions
     clearScreen();  // Clear the screen before rendering new shapes
 
     // Draw a filled rectangle
-    drawRectangle(50, 50, 100, 50, "#FF5733");
+    //drawRectangle(50, 50, 100, 50, "#FF5733");
 
     // Draw a circle outline
     drawCircleOutline(200, 200, 50, "#33FF57");
@@ -185,5 +185,5 @@ void renderLoop() {
     // Wait for a short amount of time before the next frame (for example, 20ms)
     pros::Task::delay(20);
 }
-pros::Task Renderer(renderLoop,TASK_PRIORITY_DEFAULT+1);
+//pros::Task Renderer(renderLoop,TASK_PRIORITY_DEFAULT+1);*/
 }

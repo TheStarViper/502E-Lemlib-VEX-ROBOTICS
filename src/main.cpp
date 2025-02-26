@@ -80,7 +80,7 @@ void opcontrol() {
     else if(controller.get_digital(DIGITAL_R1)){intakefunc(3,600);armstate(3);}
     else if(controller.get_digital(DIGITAL_A)){intakefunc(3,-600);}
     else {intake.brake();raiser.brake();}
-    if (controller.get_digital_new_press(DIGITAL_DOWN)){armstate(1);}
+    if (controller.get_digital_new_press(DIGITAL_L1)){armstate(1);}
     if (controller.get_digital_new_press(DIGITAL_Y)){armstate(4);}
     if (controller.get_digital_new_press(DIGITAL_L2)){mogoclamp.toggle();}
     if ((colorsensor.get_hue() > 210) && (colorsensor.get_hue() < 250)){colorsorter();}

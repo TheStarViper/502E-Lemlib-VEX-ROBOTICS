@@ -14,11 +14,10 @@
 enum ArmStates {RESTING=0,GRAB_FROM_INTAKE=1,ALMOST_SCORED=2,SCORED=3,ALLIANCE=4};
 ArmStates currentstate = RESTING;
 short int RESTINGPOS = 8000;
-short int GRABINTAKEPOS = 12600;
+short int GRABINTAKEPOS = 13500;
 short int ALMOSTSCOREDPOS = 20000;
 short int SCOREDPOS = 25000;
-//short int ALLIANCEPOS = 29000;
-short int ALLIANCEPOS = 25000;
+short int ALLIANCEPOS = 29000;
 short int dial1foroutsidethisfunction;
 short int dial2foroutsidethisfunction;
 bool antistallactive = true;
@@ -29,7 +28,7 @@ bool skillsrun;
 int selectedautonlocationonarrayandareallylongvariablenamebecausewhynotlol[2];
 
 //how the states interact with each other
-int ARMINTERATIONSSKILLS[5][5] = {
+int ARMITERATIONSSKILLS[5][5] = {
   { 1, 0, 1, 1, 1}, //resting
   { 1, 0, 1, 1, 1}, //grab from intake
   { 0, 0, 0, 0, 0}, //almost scored
@@ -37,14 +36,15 @@ int ARMINTERATIONSSKILLS[5][5] = {
   { 1, 0, 1, 1, 1}  //alliance
 //  S  AS G  R  A
 };
-int ARMINTERATIONS[5][5] = {
-  { 0, 1, 1, 1, 1}, //resting
-  { 0, 1, 1, 1, 1}, //grab from intake
+int ARMITERATIONS[5][5] = {
+  { 1, 0, 1, 1, 1}, //resting
+  { 1, 0, 1, 1, 1}, //grab from intake
   { 1, 1, 0, 0, 0}, //almost scored
   { 1, 1, 1, 1, 1}, //scored
   { 1, 1, 1, 1, 1}  //alliance
 //  S  AS G  R  A
 };
+
 int auton_array[5][4]{
     { 1, 2, 3, 4}, // red neg
     { 5, 6, 7, 8}, // red pos
@@ -96,7 +96,7 @@ void armstate(short int btn) {
   // btn = 3 is R1
   // btn = 4 is Y
   if (currentstate != ALMOST_SCORED&&btn == 1){btn = 0;}
-  if ((ARMINTERATIONS[currentstate][btn])==1){
+  if ((ARMITERATIONS[currentstate][btn])==1){
     switch(btn){
       case 0: currentstate = ALMOST_SCORED; break;
       case 1: currentstate = SCORED; break;
@@ -182,8 +182,10 @@ void updateselectedauton() {
     selectedautonlocationonarrayandareallylongvariablenamebecausewhynotlol[1] = dial2val;
     if (dial1val==4){skillsrun =true;}else{skillsrun = false;}
     setting_colorsensor_mode();
-    dial1foroutsidethisfunction = dial1val;
-    dial2foroutsidethisfunction = dial2val;
+    //dial1foroutsidethisfunction = dial1val;
+    //dial2foroutsidethisfunction = dial2val;
+    dial1foroutsidethisfunction = 4;
+    dial2foroutsidethisfunction = 3;
 }
 
 void setting_colorsensor_mode(){

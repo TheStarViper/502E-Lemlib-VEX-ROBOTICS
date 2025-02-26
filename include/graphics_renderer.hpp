@@ -45,6 +45,6 @@ void drawRotatedRectangle(int x, int y, int width, int height, int radius, const
 void drawRotatedText(int x, int y, std::string text, const std::string& hexColor, double angle);
 
 // Main rendering loop
-void renderLoop();
+//void renderLoop();
 
 } // namespace Graphics

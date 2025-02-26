@@ -15,8 +15,8 @@ inline pros::MotorGroup rightMotors({7,-8,9}, pros::MotorGearset::blue); // righ
 inline pros::Rotation armrotation(10);
 inline pros::Rotation autonslectorcornersorsmth(17);
 inline pros::Rotation autonslectoractualautonyk(17);
-inline pros::Rotation horizontalEnc(17); //vert encoder for odometry
-inline pros::Rotation verticalEnc(-17); //vert encoder for odometry
+inline pros::Rotation horizontalEnc(19); //vert encoder for odometry
+//inline pros::Rotation verticalEnc(-17); //vert encoder for odometry
 inline pros::Optical colorsensor(20);
 inline pros::Imu imu(21); //inertial
           
@@ -35,14 +35,14 @@ inline lemlib::PID armpid(.01, // kP
         false); // don't reset integral when sign of error flips
 
 //odomentry
-inline lemlib::TrackingWheel horizontal(&horizontalEnc, lemlib::Omniwheel::NEW_2, 2.5);// horizontal tracking wheel. 2" diameter, 1" offset, back of the robot (negative)
-inline lemlib::TrackingWheel vertical(&verticalEnc, lemlib::Omniwheel::NEW_2, -.3);// vertical tracking wheel. 2" diameter, 0" offset, left of the robot (negative)
+inline lemlib::TrackingWheel horizontal(&horizontalEnc, lemlib::Omniwheel::NEW_2, -1.4);// horizontal tracking wheel. 2" diameter, 1" offset, back of the robot (negative)
+//inline lemlib::TrackingWheel vertical(&verticalEnc, lemlib::Omniwheel::NEW_2, -.3);// vertical tracking wheel. 2" diameter, 0" offset, left of the robot (negative)
 
 // drivetrain settings
 inline lemlib::Drivetrain drivetrain(&leftMotors, // left motor group
                               &rightMotors, // right motor group
                               11.5, // 11.5 inch track width
-                              lemlib::Omniwheel::NEW_275, // using new 4" omnis
+                              lemlib::Omniwheel::NEW_275,
                               450, // drivetrain rpm is 360
                               8 // horizontal drift is 2. If we had traction wheels, it would have been 8
 );
@@ -73,7 +73,7 @@ inline lemlib::ControllerSettings angularController(2, // proportional gain (kP)
 
 
 // sensors for odometry
-inline lemlib::OdomSensors sensors(&vertical, // vertical tracking wheel
+inline lemlib::OdomSensors sensors(nullptr  , // vertical tracking wheel
                             nullptr, // vertical tracking wheel 2, set to nullptr as we don't have a second one
                             &horizontal, // horizontal tracking wheel
                             nullptr, // horizontal tracking wheel 2, set to nullptr as we don't have a second one
