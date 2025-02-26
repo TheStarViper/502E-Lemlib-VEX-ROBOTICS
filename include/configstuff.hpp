@@ -22,7 +22,7 @@ inline pros::Imu imu(21); //inertial
           
 //pneumatics
 inline pros::adi::Pneumatics mogoclamp('A',false);
-
+inline pros::adi::Pneumatics doinker('H',false);
 //controller
 inline pros::Controller controller(pros::E_CONTROLLER_MASTER);
 

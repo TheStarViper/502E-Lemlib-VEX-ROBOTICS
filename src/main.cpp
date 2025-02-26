@@ -83,7 +83,7 @@ void opcontrol() {
     if (controller.get_digital_new_press(DIGITAL_L1)){armstate(1);}
     if (controller.get_digital_new_press(DIGITAL_Y)){armstate(4);}
     if (controller.get_digital_new_press(DIGITAL_L2)){mogoclamp.toggle();}
-    if ((colorsensor.get_hue() > 210) && (colorsensor.get_hue() < 250)){colorsorter();}
+    if (controller.get_digital_new_press(DIGITAL_X)){doinker.toggle();}
     //if (controller.get_digital_new_press(DIGITAL_UP)){descore.toggle();}
     //if (skillsrun == true){intakefunc(2,127);}
     
