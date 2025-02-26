@@ -14,9 +14,9 @@
 enum ArmStates {RESTING=0,GRAB_FROM_INTAKE=1,ALMOST_SCORED=2,SCORED=3,ALLIANCE=4};
 ArmStates currentstate = RESTING;
 short int RESTINGPOS = 8000;
-short int GRABINTAKEPOS = 13500;
+short int GRABINTAKEPOS = 13750;
 short int ALMOSTSCOREDPOS = 20000;
-short int SCOREDPOS = 25000;
+short int SCOREDPOS = 24800;
 short int ALLIANCEPOS = 29000;
 short int dial1foroutsidethisfunction;
 short int dial2foroutsidethisfunction;
